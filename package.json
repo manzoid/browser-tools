@@ -1,6 +1,6 @@
 {
   "name": "@manzoid2/browser-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minimal Puppeteer-based browser automation toolkit for AI coding agents",
   "main": "index.js",
   "bin": {
