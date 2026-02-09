@@ -1,13 +1,19 @@
 {
-  "name": "browser-tools",
+  "name": "@manzoid/browser-tools",
   "version": "1.0.0",
-  "description": "",
+  "description": "Minimal Puppeteer-based browser automation toolkit for AI coding agents",
   "main": "index.js",
+  "bin": {
+    "browser-start": "./start.js",
+    "browser-navigate": "./navigate.js",
+    "browser-evaluate": "./evaluate.js",
+    "browser-screenshot": "./screenshot.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["puppeteer", "browser", "automation", "ai", "agent"],
+  "author": "manzoid",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
