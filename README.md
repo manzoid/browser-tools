@@ -2,60 +2,80 @@
 
 Minimal Puppeteer-based browser automation toolkit for AI coding agents. Inspired by [Mario Zechner's approach](https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/).
 
+## Installation
+
+```bash
+# Install globally
+npm install -g @manzoid2/browser-tools
+
+# Or use directly with npx
+npx @manzoid2/browser-tools <command>
+```
+
+## Quick Start
+
+```bash
+# Start browser
+browser-start
+
+# Navigate to a page
+browser-navigate https://example.com
+
+# Execute JavaScript
+browser-evaluate "document.title"
+
+# Take screenshot
+browser-screenshot test.png
+```
+
 ## Philosophy
 
 Instead of heavy MCP servers, these are simple bash-callable scripts that leverage the agent's existing JavaScript knowledge. Total documentation: ~225 tokens vs 13k+ for MCP equivalents.
 
 ## Tools
 
-### start.js [profile] [--copy-profile]
+### browser-start [profile] [--copy-profile]
 
 Launches Chrome with remote debugging on port 9222.
 
 ```bash
-./start.js                    # Use default profile
-./start.js work              # Use named profile
-./start.js work --copy-profile  # Copy Chrome profile for authenticated sessions
+browser-start                    # Use default profile
+browser-start work              # Use named profile
+browser-start work --copy-profile  # Copy Chrome profile for authenticated sessions
 ```
 
-### navigate.js <url> [--new-tab]
+### browser-navigate <url> [--new-tab]
 
 Navigate to a URL.
 
 ```bash
-./navigate.js https://example.com
-./navigate.js https://example.com --new-tab
+browser-navigate https://example.com
+browser-navigate https://example.com --new-tab
 ```
 
-### evaluate.js "<code>" | --file <path>
+### browser-evaluate "<code>" | --file <path>
 
 Execute JavaScript in the current page context.
 
 ```bash
-./evaluate.js "document.title"
-./evaluate.js "document.querySelectorAll('a').length"
-./evaluate.js --file script.js
+browser-evaluate "document.title"
+browser-evaluate "document.querySelectorAll('a').length"
+browser-evaluate --file script.js
 ```
 
-### screenshot.js [output-path] [--full-page]
+### browser-screenshot [output-path] [--full-page]
 
 Capture screenshot of current page.
 
 ```bash
-./screenshot.js
-./screenshot.js output.png
-./screenshot.js output.png --full-page
+browser-screenshot
+browser-screenshot output.png
+browser-screenshot output.png --full-page
 ```
 
 ## Usage with Claude Code
 
-Add this directory to your session:
-
-```bash
-/add-dir ~/code/src/manzoid/browser-tools
-```
-
-Then Claude can use these tools by calling the scripts directly via Bash.
+Once installed globally, Claude can use these tools directly via Bash without needing to add any directories.
 
 ## Why This Over MCP?
 
