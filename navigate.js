@@ -13,7 +13,8 @@ if (!url) {
 
 async function main() {
   const browser = await puppeteer.connect({
-    browserURL: 'http://localhost:9222'
+    browserURL: 'http://localhost:9222',
+    defaultViewport: null
   });
 
   let page;
