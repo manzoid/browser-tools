@@ -34,14 +34,16 @@ Instead of heavy MCP servers, these are simple bash-callable scripts that levera
 
 ## Tools
 
-### browser-start [profile] [--copy-profile]
+### browser-start [profile] [--copy-profile] [--size=WxH]
 
 Launches Chrome with remote debugging on port 9222.
 
 ```bash
-browser-start                    # Use default profile
-browser-start work              # Use named profile
-browser-start work --copy-profile  # Copy Chrome profile for authenticated sessions
+browser-start                           # Default profile, 1440x900 window
+browser-start work                      # Named profile
+browser-start work --copy-profile       # Copy Chrome profile for authenticated sessions
+browser-start --size=1920x1080          # Custom window size
+browser-start work --size=1280x720      # Named profile + custom size
 ```
 
 ### browser-navigate <url> [--new-tab]

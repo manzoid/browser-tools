@@ -21,7 +21,12 @@ cd ~/code/src/manzoid/browser-tools
 ./start.js
 ```
 
-This launches Chrome with remote debugging on port 9222. Leave this running.
+This launches Chrome with remote debugging on port 9222 at 1440x900. Leave this running.
+
+To set a specific window size:
+```bash
+./start.js --size=1920x1080
+```
 
 ### 2. Navigate to a page
 In a new terminal:
